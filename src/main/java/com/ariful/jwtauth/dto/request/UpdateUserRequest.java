@@ -1,8 +1,6 @@
 package com.ariful.jwtauth.dto.request;
 
 import com.ariful.jwtauth.validation.ValidEmail;
-import com.ariful.jwtauth.validation.ValidPassword;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,22 +11,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegisterRequest {
+public class UpdateUserRequest {
     
-    @NotBlank(message = "Username is required")
-    @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
-    private String username;
-    
-    @NotBlank(message = "Email is required")
     @ValidEmail
     private String email;
-    
-    @NotBlank(message = "Password is required")
-    @ValidPassword
-    private String password;
-    
-    @NotBlank(message = "Confirm password is required")
-    private String confirmPassword;
     
     @Size(max = 50, message = "First name cannot exceed 50 characters")
     private String firstName;

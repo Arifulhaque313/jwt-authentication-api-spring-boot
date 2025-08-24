@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class JwtAuthResponse {
-    
-    private String accessToken;
-    private String refreshToken;
-    private String tokenType = "Bearer";
-    private Long expiresIn;
-    private UserResponse user;
+public class PermissionResponse {
+
+    private Long id;
+    private String name;
+    private String description;
+    private String resource;
+    private String action;
 }
